@@ -3,7 +3,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "6b4473b5",
+   "id": "8390d43e",
    "metadata": {},
    "outputs": [
     {
@@ -26,8 +26,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
-   "id": "1e57781f",
+   "execution_count": null,
+   "id": "4475f97d",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -36,8 +36,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
-   "id": "61075066",
+   "execution_count": null,
+   "id": "2aa5e9fe",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -48,8 +48,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "5a150517",
+   "execution_count": null,
+   "id": "188958f0",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -61,25 +61,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "id": "75249eff",
+   "execution_count": null,
+   "id": "a007448e",
    "metadata": {},
-   "outputs": [
-    {
-     "ename": "AssertionError",
-     "evalue": "View function mapping is overwriting an existing endpoint function: scrape",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-7-def9374392f4>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[1;33m@\u001b[0m\u001b[0mapp\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mroute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"/scrape\"\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      2\u001b[0m \u001b[1;32mdef\u001b[0m \u001b[0mscrape\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      3\u001b[0m    \u001b[0mmars\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mmongo\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mdb\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mmars\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      4\u001b[0m    \u001b[0mmars_data\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mscraping\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mscrape_all\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      5\u001b[0m    \u001b[0mmars\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m{\u001b[0m\u001b[1;33m}\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mmars_data\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mupsert\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mTrue\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m~\\Anaconda3\\envs\\PythonData\\lib\\site-packages\\flask\\app.py\u001b[0m in \u001b[0;36mdecorator\u001b[1;34m(f)\u001b[0m\n\u001b[0;32m   1313\u001b[0m         \u001b[1;32mdef\u001b[0m \u001b[0mdecorator\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mf\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m   1314\u001b[0m             \u001b[0mendpoint\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0moptions\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mpop\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"endpoint\"\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;32mNone\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 1315\u001b[1;33m             \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0madd_url_rule\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mrule\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mendpoint\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mf\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m**\u001b[0m\u001b[0moptions\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m   1316\u001b[0m             \u001b[1;32mreturn\u001b[0m \u001b[0mf\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m   1317\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m~\\Anaconda3\\envs\\PythonData\\lib\\site-packages\\flask\\app.py\u001b[0m in \u001b[0;36mwrapper_func\u001b[1;34m(self, *args, **kwargs)\u001b[0m\n\u001b[0;32m     96\u001b[0m                 \u001b[1;34m\"before the application starts serving requests.\"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     97\u001b[0m             )\n\u001b[1;32m---> 98\u001b[1;33m         \u001b[1;32mreturn\u001b[0m \u001b[0mf\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m*\u001b[0m\u001b[0margs\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m     99\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    100\u001b[0m     \u001b[1;32mreturn\u001b[0m \u001b[0mupdate_wrapper\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mwrapper_func\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mf\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m~\\Anaconda3\\envs\\PythonData\\lib\\site-packages\\flask\\app.py\u001b[0m in \u001b[0;36madd_url_rule\u001b[1;34m(self, rule, endpoint, view_func, provide_automatic_options, **options)\u001b[0m\n\u001b[0;32m   1282\u001b[0m                 raise AssertionError(\n\u001b[0;32m   1283\u001b[0m                     \u001b[1;34m\"View function mapping is overwriting an \"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 1284\u001b[1;33m                     \u001b[1;34m\"existing endpoint function: %s\"\u001b[0m \u001b[1;33m%\u001b[0m \u001b[0mendpoint\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m   1285\u001b[0m                 )\n\u001b[0;32m   1286\u001b[0m             \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mview_functions\u001b[0m\u001b[1;33m[\u001b[0m\u001b[0mendpoint\u001b[0m\u001b[1;33m]\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mview_func\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mAssertionError\u001b[0m: View function mapping is overwriting an existing endpoint function: scrape"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "@app.route(\"/scrape\")\n",
     "def scrape():\n",
@@ -91,22 +76,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
-   "id": "2d935a32",
+   "execution_count": null,
+   "id": "ad43d148",
    "metadata": {},
-   "outputs": [
-    {
-     "ename": "NameError",
-     "evalue": "name 'mars' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-8-88cd6407df77>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mmars\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m{\u001b[0m\u001b[1;33m}\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mmars_data\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mupsert\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mTrue\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      2\u001b[0m \u001b[1;32mreturn\u001b[0m \u001b[0mredirect\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'/'\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcode\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;36m302\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mNameError\u001b[0m: name 'mars' is not defined"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "mars.update({}, mars_data, upsert=True)\n",
     "return redirect('/', code=302)"
@@ -115,28 +88,9 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "26a87e56",
+   "id": "b3494ca3",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      " * Serving Flask app \"__main__\" (lazy loading)\n",
-      " * Environment: production\n",
-      "   WARNING: This is a development server. Do not use it in a production deployment.\n",
-      "   Use a production WSGI server instead.\n",
-      " * Debug mode: off\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      " * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "if __name__ == \"__main__\":\n",
     "   app.run()"
@@ -145,7 +99,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "01ac3a02",
+   "id": "4023bf5c",
    "metadata": {},
    "outputs": [],
    "source": []
